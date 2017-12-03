@@ -26,10 +26,8 @@
             out.println("Exception occured");
         }
         session.removeAttribute("products");
-
-
     %>
-    <form>
+    <form name="productList" action="/cart" method="post">
         <div class="product_list">
             <table>
                 <thead>
@@ -41,16 +39,20 @@
                 </thead>
                 <br/>
                 <tbody>
-                    <%
-                        for (Product product: products)
-                        {
-                    %>
+                <%
+                    int i=0;
+                    for (Product product: products)
+                    {
+                        String checkbox = "checkbox"+i;
+                        String quantity = "quantity"+i;
+
+                %>
                     <tr>
-                        <td><input type="checkbox" name="checkbox"/></td>
+                        <td><input type="checkbox" name="<%=checkbox%>"/></td>
                         <td><label><%=product.getId()%></label></td>
                         <td><label><%=product.getName()%></label></td>
                         <td><label><%=product.getPrice()%></label></td>
-                        <td><input class="quantityInput" type="number" min="0" name="quantity" value="<%=product.getQuantity()%>"/></td>
+                        <td><input class="quantityInput" type="number" min="0" name="<%=quantity%>" value="<%=product.getQuantity()%>"/></td>
                     </tr>
                 <%
                     }

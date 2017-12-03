@@ -11,4 +11,12 @@
         <servlet-name>Shopping Servlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Cart Servlet</servlet-name>
+        <servlet-class>com.shopping.servlets.cart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cart Servlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
 </web-app>
