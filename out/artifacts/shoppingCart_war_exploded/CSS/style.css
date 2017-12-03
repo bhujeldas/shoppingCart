@@ -1,0 +1,21 @@
+
+.logininput {
+    text-align: center;
+    margin: 2em;
+}
+.logininput input {
+   margin: 1em;
+    
+    padding: .5em;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;;
+}
+.loginbuttons {
+    text-align: center;
+    margin: 2em;
+}
+.loginbuttons input {
+    font-size: 2em;
+}

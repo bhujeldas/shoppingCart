@@ -1,0 +1,40 @@
+.buttons {
+    text-align: center;
+    margin: 1.5em;
+}
+.product_list {
+    margin-top: 8em;
+}
+.product_list table {
+    align: center;
+    margin: auto;
+}
+.product_list table tbody td {
+    padding-top: .3em;
+    padding-right: 1em;
+    padding-left: 1em;
+
+}
+.product_list table tbody td:nth-child(3)
+{
+    padding-left: 5em;
+    padding-right: 5em;
+}
+.product_list table thead th {
+    padding-bottom: 1.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+
+}
+.quantityInput {
+    margin: 1em;
+
+    padding: .5em;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;;
+}
+.buttons input {
+    font-size: 2em;
+}
