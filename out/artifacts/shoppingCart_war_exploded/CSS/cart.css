@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+    margin: 1.5em;
+}
+.cartProducts table {
+    align: center;
+    margin: auto;
+}
+.cartProducts table tbody td {
+    padding-top: .3em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.cartProducts table tbody td:nth-child(0)
+{
+    padding-left: 5em;
+    padding-right: 5em;
+}
+.cartProducts table thead th {
+    padding-bottom: 1.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+}

@@ -9,8 +9,48 @@
 <html>
 <head>
     <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="CSS/cart.css">
 </head>
 <body>
-    <p>Forwarded to cart</p>
+    <h1>
+        Summary of Cart
+    </h1>
+    <form name="cart" action="/checkout" method="post">
+        <div class="cartProducts">
+            <table>
+                <thead>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td> Lamp </td>
+                        <td> 2 </td>
+                        <td> 20 </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Total
+                        </td>
+                        <td>
+                            <label></label>
+                        </td>
+                        <td>
+                            $13
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" name="BackToCart" value="Back to cart"/>
+            <input type="submit" name="Checkout" value="Checkout"/>
+        </div>
+    </form>
 </body>
 </html>

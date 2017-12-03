@@ -45,6 +45,7 @@
                     {
                         String checkbox = "checkbox"+i;
                         String quantity = "quantity"+i;
+                        product.setPrice(0);
 
                 %>
                     <tr>
