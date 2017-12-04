@@ -1,7 +1,7 @@
 package com.shopping.entity;
 
 public class Product {
-    int id;
+    long id;
     String name;
     float price;
     int quantity;
@@ -13,11 +13,11 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
