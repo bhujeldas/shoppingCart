@@ -10,23 +10,38 @@
   <head>
     <title>Welcome</title>
       <link rel="stylesheet" type="text/css" href="CSS/style.css">
+
   </head>
   <body>
 
-  <form name="something" action="/login" method="post">
-      <span class="message"> </span>
-      <div class="logininput">
-          Username: <input type="text" name="username" value=""/>
-          <br/>
-          Password: <input type="password" name="password" value=""/>
+  <div>
+      <jsp:include page="header.jsp" />
+  </div>
+ <%-- <div>
+      <jsp:include page="menu.jsp" />
+  </div>--%>
+
+  <div class="content">
+      <div class="container">
+
+          <form name="something" action="/login" method="post">
+              <span class="message"> </span>
+              <div class="logininput">
+                  Username: <input type="text" name="username" value=""/>
+                  <br/>
+                  Password: <input type="password" name="password" value=""/>
+              </div>
+              <div class="loginbuttons">
+                  <input type="submit" name="page" value="Login"/>
+                  <input type="reset" name="page" value="Reset"/>
+              </div>
+          </form>
+
       </div>
+  </div>
 
-    <div class="loginbuttons">
-      <input type="submit" name="page" value="Login"/>
-      <input type="reset" name="page" value="Reset"/>
-    </div>
-
-  </form>
-
+  <div>
+      <jsp:include page="footer.jsp" />
+  </div>
   </body>
 </html>

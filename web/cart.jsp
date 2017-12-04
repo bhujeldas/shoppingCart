@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="CSS/cart.css">
 </head>
 <body>
+    <div>
+        <jsp:include page="header.jsp" />
+    </div>
+    <div class="content">
+        <div class="container">
     <h1>
         Summary of Cart
     </h1>
@@ -52,5 +57,10 @@
             <input type="submit" name="Checkout" value="Checkout"/>
         </div>
     </form>
+        </div>
+    </div>
+    <div>
+        <jsp:include page="footer.jsp" />
+    </div>
 </body>
 </html>
