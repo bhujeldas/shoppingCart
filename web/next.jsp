@@ -19,8 +19,15 @@
     %>
     <%
         products = (List<Product>) session.getAttribute("products");
-        session.removeAttribute("products");
+
+
+        //session.removeAttribute("products");
     %>
+    <div>
+        <jsp:include page="header.jsp" />
+    </div>
+    <div class="content">
+        <div class="container">
     <form name="productList" action="/cart" method="post">
         <div class="product_list">
             <table>
@@ -58,5 +65,10 @@
             <input type="submit" name="checkout" value="Checkout"/>
         </div>
     </form>
+        </div>
+    </div>
+    <div>
+        <jsp:include page="footer.jsp" />
+    </div>
 </body>
 </html>

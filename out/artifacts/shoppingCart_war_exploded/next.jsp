@@ -19,8 +19,23 @@
     %>
     <%
         products = (List<Product>) session.getAttribute("products");
+<<<<<<< HEAD
         session.removeAttribute("products");
+=======
+        try {
+            //System.out.println(products.size());
+        }catch (Exception e)
+        {
+            //System.out.println("Exception occured");
+        }
+        //session.removeAttribute("products");
+>>>>>>> header
     %>
+    <div>
+        <jsp:include page="header.jsp" />
+    </div>
+    <div class="content">
+        <div class="container">
     <form name="productList" action="/cart" method="post">
         <div class="product_list">
             <table>
@@ -58,5 +73,13 @@
             <input type="submit" name="checkout" value="Checkout"/>
         </div>
     </form>
+<<<<<<< HEAD
+=======
+        </div>
+    </div>
+    <div>
+        <jsp:include page="footer.jsp" />
+    </div>
+>>>>>>> header
 </body>
 </html>

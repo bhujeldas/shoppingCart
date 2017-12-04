@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
     <servlet>
         <servlet-name>Shopping Servlet</servlet-name>
         <servlet-class>com.shopping.servlets.login</servlet-class>
@@ -11,6 +12,7 @@
         <servlet-name>Shopping Servlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>Cart Servlet</servlet-name>
         <servlet-class>com.shopping.servlets.cart</servlet-class>
@@ -18,5 +20,13 @@
     <servlet-mapping>
         <servlet-name>Cart Servlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>header</servlet-name>
+        <jsp-file>/header.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>header</servlet-name>
+        <url-pattern>/header</url-pattern>
     </servlet-mapping>
 </web-app>
