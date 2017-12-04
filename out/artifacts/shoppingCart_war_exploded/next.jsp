@@ -19,12 +19,6 @@
     %>
     <%
         products = (List<Product>) session.getAttribute("products");
-        try {
-            out.println(products.size());
-        }catch (Exception e)
-        {
-            out.println("Exception occured");
-        }
         session.removeAttribute("products");
     %>
     <form name="productList" action="/cart" method="post">
@@ -43,10 +37,8 @@
                     int i=0;
                     for (Product product: products)
                     {
-                        String checkbox = "checkbox"+i;
+                        boolean checkbox =false;
                         String quantity = "quantity"+i;
-                        product.setPrice(0);
-
                 %>
                     <tr>
                         <td><input type="checkbox" name="<%=checkbox%>"/></td>
@@ -58,9 +50,7 @@
                 <%
                     }
                 %>
-
                 </tbody>
-
             </table>
         </div>
         <div class="buttons">
@@ -68,6 +58,5 @@
             <input type="submit" name="checkout" value="Checkout"/>
         </div>
     </form>
-
 </body>
 </html>
