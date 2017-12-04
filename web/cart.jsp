@@ -1,60 +1,76 @@
-<%--
+<%@ page import="com.shopping.entity.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: ketan
-  Date: 12/3/17
-  Time: 2:35 PM
+  Date: 12/2/17
+  Time: 9:40 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Cart</title>
-    <link rel="stylesheet" type="text/css" href="CSS/cart.css">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="CSS/products.css">
 </head>
 <body>
+    <%!
+//        List<Product> products = new ArrayList<>();
+    %>
+    <%
+        List<Product> products = (List<Product>) session.getAttribute("products");
+        //session.removeAttribute("products");
+    %>
     <div>
         <jsp:include page="header.jsp" />
     </div>
     <div class="content">
         <div class="container">
-    <h1>
-        Summary of Cart
-    </h1>
-    <form name="cart" action="/checkout" method="post">
-        <div class="cartProducts">
+
+    <form name="productList" action="/cart" method="post">
+        <div class="product_list">
+            </span>
             <table>
+                <tr><td colspan="5"><%
+                    String addToCartMessage=""+request.getAttribute("addToCartMessage");
+                    if(addToCartMessage!=null){
+                %>
+                    <span style="color: #2273ff"><%=addToCartMessage%></span>
+                    <%}%><span style="color: #2273ff"><%System.out.println(request.getParameterValues("addToCartMessage"));%></span></td></tr>
                 <thead>
-                    <th>Product</th>
+                    <th>Select</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
                     <th>Quantity</th>
-                    <th>Cost</th>
                 </thead>
+                <br/>
                 <tbody>
-
+                <%
+                    int i=0;
+                    for (Product product: products)
+                    {
+//                        boolean checkbox =false;
+//                        String quantity = "quantity"+i;
+                %>
                     <tr>
-                        <td> Lamp </td>
-                        <td> 2 </td>
-                        <td> 20 </td>
+                        <td><input type="checkbox" name="chkProducts" value="<%=product.getId()%>"/></td>
+                        <td><label><%=product.getId()%></label></td>
+                        <td><label><%=product.getName()%></label></td>
+                        <td><label>$<%=product.getPrice()%></label></td>
+                        <td><input class="quantityInput" type="number" min="0" name="qty<%=product.getQuantity()%>"/></td>
                     </tr>
-
-                    <tr>
-                        <td>
-                            Total
-                        </td>
-                        <td>
-                            <label></label>
-                        </td>
-                        <td>
-                            $13
-                        </td>
-                    </tr>
-
+                <%
+                    }
+                %>
                 </tbody>
             </table>
         </div>
-
         <div class="buttons">
-            <input type="submit" name="BackToCart" value="Back to cart"/>
-            <input type="submit" name="Checkout" value="Checkout"/>
+            <input type="submit" name="addToCart" value="Add to cart"/>
+            <input type="submit" name="checkout" value="Checkout"/>
+            <br/>
+
         </div>
     </form>
         </div>

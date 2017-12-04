@@ -34,6 +34,13 @@
               <div class="loginbuttons">
                   <input type="submit" name="page" value="Login"/>
                   <input type="reset" name="page" value="Reset"/>
+                  <br/>
+                  <%
+                      String invalidUserMessage=(String)request.getAttribute("invalidUser");
+                      if(invalidUserMessage!=null){
+                  %>
+                  <span style="color: #ff454d"><%=invalidUserMessage %></span>
+                  <%}%>
               </div>
           </form>
 

@@ -1,3 +1,4 @@
+
 package com.shopping.servlets;
 
 import com.shopping.entity.Product;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class login extends HttpServlet{
 
@@ -36,16 +36,16 @@ public class login extends HttpServlet{
         String password = request.getParameter("password");
         boolean isValidUser = loginService.authenticate(username, password);
         if (isValidUser) {
-            nextPage = "/next.jsp";
+            nextPage = "/cart.jsp";
             List<Product> productList = new ArrayList<>();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 5; i++) {
                 productList.add(new Product(i, "some", (float) 10, 2));
             }
             session = request.getSession(true);
             session.setAttribute("products", productList);
         } else {
             nextPage = "/index.jsp";
-            request.setAttribute("invalidUser", "Invalid username or password.");
+            request.setAttribute("invalidUser", "Warning: Invalid username or password!");
         }
         RequestDispatcher rd = request.getRequestDispatcher(nextPage);
         rd.forward(request, response);
