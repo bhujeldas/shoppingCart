@@ -20,7 +20,6 @@
     <%
         products = (List<Product>) session.getAttribute("products");
 
-
         //session.removeAttribute("products");
     %>
     <div>
